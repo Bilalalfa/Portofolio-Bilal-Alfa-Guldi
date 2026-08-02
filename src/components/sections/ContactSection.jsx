@@ -64,7 +64,7 @@ const ContactSection = () => {
             className="flex items-center gap-2 text-gray-600 hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
           >
             <FiMail className="w-5 h-5" />
-            <span>bilalalfag35@gmail.com</span>
+            <span>Gmail</span>
           </a>
           <a
             href="https://www.linkedin.com/in/bilalalfaguldi/"
