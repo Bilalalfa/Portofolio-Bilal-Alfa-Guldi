@@ -31,10 +31,10 @@ const currentYear = new Date().getFullYear();
  */
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-8 px-4">
+    <footer className="bg-gray-900 dark:bg-slate-950 text-gray-400 border-t border-gray-800 dark:border-slate-900 py-8 px-4 transition-colors duration-300">
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
         {/* Copyright */}
-        <p className="text-sm">
+        <p className="text-sm text-gray-400 dark:text-slate-400">
           &copy; {currentYear} Bilal Alfa Guldi. All rights reserved.
         </p>
 
@@ -51,7 +51,7 @@ const Footer = () => {
                     {...(isExternal
                       ? { target: '_blank', rel: 'noopener noreferrer' }
                       : {})}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded"
+                    className="text-gray-400 dark:text-slate-400 hover:text-white dark:hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded"
                   >
                     <Icon className="text-2xl" aria-hidden="true" />
                   </a>

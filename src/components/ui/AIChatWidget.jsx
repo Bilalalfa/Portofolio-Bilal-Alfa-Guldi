@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  FiMessageSquare,
   FiX,
   FiSend,
   FiTrash2,
@@ -46,7 +45,7 @@ function renderFormattedText(text) {
     const formattedParts = parts.map((part, pIdx) => {
       if (part.startsWith('**') && part.endsWith('**')) {
         return (
-          <strong key={pIdx} className="font-semibold text-gray-900">
+          <strong key={pIdx} className="font-semibold text-gray-900 dark:text-slate-100">
             {part.slice(2, -2)}
           </strong>
         );
@@ -184,7 +183,7 @@ export default function AIChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="fixed bottom-6 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[390px] h-[540px] max-h-[82vh] bg-white rounded-2xl shadow-2xl border border-gray-200/80 flex flex-col overflow-hidden"
+            className="fixed bottom-6 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[390px] h-[540px] max-h-[82vh] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-gray-200/80 dark:border-slate-800 flex flex-col overflow-hidden transition-colors duration-300"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-blue-600 px-4 py-3.5 text-white flex items-center justify-between shadow-md">
@@ -225,7 +224,7 @@ export default function AIChatWidget() {
             </div>
 
             {/* Chat Body / Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50 text-sm">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50 dark:bg-slate-950/70 text-sm">
               {messages.map((msg, index) => {
                 const isUser = msg.role === 'user';
                 return (
@@ -240,10 +239,10 @@ export default function AIChatWidget() {
                       className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-xs font-semibold ${
                         isUser
                           ? 'bg-indigo-600 text-white'
-                          : 'bg-indigo-100 text-indigo-700 border border-indigo-200'
+                          : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800'
                       }`}
                     >
-                      {isUser ? <FiUser className="w-3.5 h-3.5" /> : <FiZap className="w-3.5 h-3.5 text-indigo-600" />}
+                      {isUser ? <FiUser className="w-3.5 h-3.5" /> : <FiZap className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />}
                     </div>
 
                     {/* Bubble */}
@@ -251,7 +250,7 @@ export default function AIChatWidget() {
                       className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed ${
                         isUser
                           ? 'bg-indigo-600 text-white rounded-tr-none shadow-sm'
-                          : 'bg-white text-gray-800 border border-gray-200/80 rounded-tl-none shadow-sm'
+                          : 'bg-white dark:bg-slate-800 text-gray-800 dark:text-slate-100 border border-gray-200/80 dark:border-slate-700 rounded-tl-none shadow-sm'
                       }`}
                     >
                       {isUser ? msg.text : renderFormattedText(msg.text)}
@@ -263,7 +262,7 @@ export default function AIChatWidget() {
               {/* Quick suggestion chips (shown if history is short) */}
               {messages.length === 1 && (
                 <div className="pt-2">
-                  <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                  <p className="text-[11px] font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-wider mb-2">
                     Rekomendasi Pertanyaan:
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -271,7 +270,7 @@ export default function AIChatWidget() {
                       <button
                         key={idx}
                         onClick={() => handleSend(q.replace(/^[^\s]+\s/, ''))}
-                        className="text-left text-xs bg-white hover:bg-indigo-50 border border-gray-200 hover:border-indigo-300 text-gray-700 hover:text-indigo-700 px-3 py-1.5 rounded-full transition-all duration-200 shadow-sm"
+                        className="text-left text-xs bg-white dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 text-gray-700 dark:text-slate-300 hover:text-indigo-700 dark:hover:text-indigo-300 px-3 py-1.5 rounded-full transition-all duration-200 shadow-sm"
                       >
                         {q}
                       </button>
@@ -282,11 +281,11 @@ export default function AIChatWidget() {
 
               {/* Loading Bouncing Dots Indicator */}
               {isLoading && (
-                <div className="flex items-center gap-2 text-gray-500 text-xs pl-2">
-                  <div className="w-7 h-7 rounded-full bg-indigo-100 border border-indigo-200 flex items-center justify-center">
-                    <FiZap className="w-3.5 h-3.5 text-indigo-600 animate-spin" />
+                <div className="flex items-center gap-2 text-gray-500 dark:text-slate-400 text-xs pl-2">
+                  <div className="w-7 h-7 rounded-full bg-indigo-100 dark:bg-indigo-950 border border-indigo-200 dark:border-indigo-800 flex items-center justify-center">
+                    <FiZap className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 animate-spin" />
                   </div>
-                  <div className="bg-white border border-gray-200 px-3.5 py-2 rounded-2xl rounded-tl-none flex items-center gap-1 shadow-sm">
+                  <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 px-3.5 py-2 rounded-2xl rounded-tl-none flex items-center gap-1 shadow-sm">
                     <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
                     <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
                     <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-bounce"></span>
@@ -298,8 +297,8 @@ export default function AIChatWidget() {
             </div>
 
             {/* Input Bar */}
-            <div className="p-3 bg-white border-t border-gray-200/80">
-              <div className="flex items-center gap-2 bg-gray-100 rounded-xl px-3 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:bg-white transition-all">
+            <div className="p-3 bg-white dark:bg-slate-900 border-t border-gray-200/80 dark:border-slate-800">
+              <div className="flex items-center gap-2 bg-gray-100 dark:bg-slate-800 rounded-xl px-3 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:bg-white dark:focus-within:bg-slate-800 transition-all">
                 <input
                   ref={inputRef}
                   type="text"
@@ -307,7 +306,7 @@ export default function AIChatWidget() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Tanyakan sesuatu tentang Bilal..."
-                  className="flex-1 bg-transparent text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none py-1"
+                  className="flex-1 bg-transparent text-xs sm:text-sm text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-500 focus:outline-none py-1"
                   disabled={isLoading}
                 />
                 <button
@@ -319,7 +318,7 @@ export default function AIChatWidget() {
                   <FiSend className="w-4 h-4" />
                 </button>
               </div>
-              <p className="text-[10px] text-center text-gray-400 mt-2">
+              <p className="text-[10px] text-center text-gray-400 dark:text-slate-500 mt-2">
                 Powered by Gemini AI • Informasi seputar Bilal Alfa Guldi
               </p>
             </div>

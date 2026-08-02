@@ -47,8 +47,8 @@ const TimelineEntry = ({
         <div
           className={`flex items-center justify-center w-10 h-10 rounded-full shrink-0 ${
             isEducation
-              ? 'bg-purple-100 text-purple-700'
-              : 'bg-blue-100 text-blue-700'
+              ? 'bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-transparent dark:border-purple-800/40'
+              : 'bg-blue-100 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-transparent dark:border-blue-800/40'
           }`}
           aria-hidden="true"
         >
@@ -59,7 +59,7 @@ const TimelineEntry = ({
           )}
         </div>
         {/* Connector line — purely decorative */}
-        <div className="w-px flex-1 bg-gray-200 mt-2" aria-hidden="true" />
+        <div className="w-px flex-1 bg-gray-200 dark:bg-slate-800 mt-2" aria-hidden="true" />
       </div>
 
       {/* Content */}
@@ -68,28 +68,28 @@ const TimelineEntry = ({
         <span
           className={`inline-block text-xs font-semibold px-2 py-0.5 rounded mb-2 ${
             isEducation
-              ? 'bg-purple-100 text-purple-700'
-              : 'bg-blue-100 text-blue-700'
+              ? 'bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-transparent dark:border-purple-800/40'
+              : 'bg-blue-100 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-transparent dark:border-blue-800/40'
           }`}
         >
           {isEducation ? 'Education' : 'Experience'}
         </span>
 
         {/* Role / Degree */}
-        <h3 className="text-base font-semibold text-gray-900 leading-snug">
+        <h3 className="text-base font-semibold text-gray-900 dark:text-white leading-snug">
           {roleOrDegree}
         </h3>
 
         {/* Institution / Company */}
-        <p className="text-sm font-medium text-gray-600 mt-0.5">
+        <p className="text-sm font-medium text-gray-600 dark:text-slate-300 mt-0.5">
           {institutionOrCompany}
         </p>
 
         {/* Duration */}
-        <p className="text-xs text-gray-500 mt-1">{duration}</p>
+        <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">{duration}</p>
 
         {/* Description */}
-        <p className="text-sm text-gray-700 mt-2 leading-relaxed">
+        <p className="text-sm text-gray-700 dark:text-slate-300 mt-2 leading-relaxed">
           {description}
         </p>
       </div>

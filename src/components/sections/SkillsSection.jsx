@@ -56,14 +56,14 @@ const SkillsSection = () => {
   const skillCategories = groupByCategory(skills);
 
   return (
-    <AnimatedSection id="skills" variants={fadeInUp} className="py-16 px-4 sm:px-6 lg:px-8">
+    <AnimatedSection id="skills" variants={fadeInUp} className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Skills</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">Skills</h2>
 
         <div className="space-y-10">
           {skillCategories.map((category) => (
             <div key={category.name}>
-              <h3 className="text-xl font-semibold text-gray-700 mb-4 border-b border-gray-200 pb-2">
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-slate-200 mb-4 border-b border-gray-200 dark:border-slate-800 pb-2">
                 {category.name}
               </h3>
 

@@ -46,13 +46,13 @@ const ContactSection = () => {
   };
 
   return (
-    <AnimatedSection id="contact" variants={fadeInUp} className="py-20 bg-gray-50">
+    <AnimatedSection id="contact" variants={fadeInUp} className="py-20 bg-gray-50 dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6">
         {/* Section heading */}
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
+        <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-4">
           Contact Me
         </h2>
-        <p className="text-center text-gray-500 mb-12">
+        <p className="text-center text-gray-500 dark:text-slate-400 mb-12">
           Have a question or want to work together? Drop me a message.
         </p>
 
@@ -61,7 +61,7 @@ const ContactSection = () => {
           <a
             href="mailto:bilalalfag35@gmail.com"
             aria-label="Send email"
-            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+            className="flex items-center gap-2 text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
           >
             <FiMail className="w-5 h-5" />
             <span>Gmail</span>
@@ -71,7 +71,7 @@ const ContactSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+            className="flex items-center gap-2 text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
           >
             <FiLinkedin className="w-5 h-5" />
             <span>LinkedIn</span>
@@ -81,7 +81,7 @@ const ContactSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+            className="flex items-center gap-2 text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
           >
             <FiGithub className="w-5 h-5" />
             <span>GitHub</span>
@@ -92,11 +92,11 @@ const ContactSection = () => {
         <form
           onSubmit={handleSubmit(onSubmit)}
           noValidate
-          className="bg-white rounded-2xl shadow-md p-8 flex flex-col gap-6"
+          className="bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-2xl shadow-md p-8 flex flex-col gap-6"
         >
           {/* Name field */}
           <div className="flex flex-col gap-1">
-            <label htmlFor="name" className="text-sm font-medium text-gray-700">
+            <label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-slate-200">
               Name <span aria-hidden="true" className="text-red-500">*</span>
             </label>
             <input
@@ -105,14 +105,16 @@ const ContactSection = () => {
               autoComplete="name"
               aria-invalid={errors.name ? 'true' : 'false'}
               aria-describedby={errors.name ? 'name-error' : undefined}
-              className={`rounded-lg border px-4 py-2.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
-                errors.name ? 'border-red-400 bg-red-50' : 'border-gray-300 bg-white'
+              className={`rounded-lg border px-4 py-2.5 text-gray-800 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                errors.name
+                  ? 'border-red-400 dark:border-red-500/80 bg-red-50 dark:bg-red-950/30'
+                  : 'border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800'
               }`}
               placeholder="Your full name"
               {...register('name', { required: 'Nama wajib diisi' })}
             />
             {errors.name && (
-              <p id="name-error" role="alert" className="text-sm text-red-600">
+              <p id="name-error" role="alert" className="text-sm text-red-600 dark:text-red-400">
                 {errors.name.message}
               </p>
             )}
@@ -120,7 +122,7 @@ const ContactSection = () => {
 
           {/* Email field */}
           <div className="flex flex-col gap-1">
-            <label htmlFor="email" className="text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-slate-200">
               Email <span aria-hidden="true" className="text-red-500">*</span>
             </label>
             <input
@@ -129,8 +131,10 @@ const ContactSection = () => {
               autoComplete="email"
               aria-invalid={errors.email ? 'true' : 'false'}
               aria-describedby={errors.email ? 'email-error' : undefined}
-              className={`rounded-lg border px-4 py-2.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
-                errors.email ? 'border-red-400 bg-red-50' : 'border-gray-300 bg-white'
+              className={`rounded-lg border px-4 py-2.5 text-gray-800 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                errors.email
+                  ? 'border-red-400 dark:border-red-500/80 bg-red-50 dark:bg-red-950/30'
+                  : 'border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800'
               }`}
               placeholder="your@email.com"
               {...register('email', {
@@ -142,7 +146,7 @@ const ContactSection = () => {
               })}
             />
             {errors.email && (
-              <p id="email-error" role="alert" className="text-sm text-red-600">
+              <p id="email-error" role="alert" className="text-sm text-red-600 dark:text-red-400">
                 {errors.email.message}
               </p>
             )}
@@ -150,7 +154,7 @@ const ContactSection = () => {
 
           {/* Message field */}
           <div className="flex flex-col gap-1">
-            <label htmlFor="message" className="text-sm font-medium text-gray-700">
+            <label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-slate-200">
               Message <span aria-hidden="true" className="text-red-500">*</span>
             </label>
             <textarea
@@ -158,14 +162,16 @@ const ContactSection = () => {
               rows={5}
               aria-invalid={errors.message ? 'true' : 'false'}
               aria-describedby={errors.message ? 'message-error' : undefined}
-              className={`rounded-lg border px-4 py-2.5 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none ${
-                errors.message ? 'border-red-400 bg-red-50' : 'border-gray-300 bg-white'
+              className={`rounded-lg border px-4 py-2.5 text-gray-800 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none ${
+                errors.message
+                  ? 'border-red-400 dark:border-red-500/80 bg-red-50 dark:bg-red-950/30'
+                  : 'border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800'
               }`}
               placeholder="Write your message here..."
               {...register('message', { required: 'Pesan wajib diisi' })}
             />
             {errors.message && (
-              <p id="message-error" role="alert" className="text-sm text-red-600">
+              <p id="message-error" role="alert" className="text-sm text-red-600 dark:text-red-400">
                 {errors.message.message}
               </p>
             )}
@@ -176,7 +182,7 @@ const ContactSection = () => {
             <div
               role="status"
               aria-live="polite"
-              className="rounded-lg bg-green-50 border border-green-200 px-4 py-3 text-green-700 text-sm"
+              className="rounded-lg bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800/60 px-4 py-3 text-green-700 dark:text-green-300 text-sm"
             >
               Your message was sent successfully! I&apos;ll get back to you soon.
             </div>
@@ -185,7 +191,7 @@ const ContactSection = () => {
             <div
               role="alert"
               aria-live="assertive"
-              className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-red-700 text-sm"
+              className="rounded-lg bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 px-4 py-3 text-red-700 dark:text-red-300 text-sm"
             >
               Something went wrong. Please try again or reach out via email directly.
             </div>
@@ -195,7 +201,7 @@ const ContactSection = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="self-start px-8 py-3 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+            className="self-start px-8 py-3 bg-blue-600 dark:bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700 dark:hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
           >
             {isSubmitting ? 'Sending…' : 'Send Message'}
           </button>

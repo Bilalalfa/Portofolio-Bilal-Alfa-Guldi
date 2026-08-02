@@ -31,9 +31,9 @@ const staggerItem = {
 function FilterBar({ tags, activeTag, onFilter }) {
   const baseClass =
     'px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600';
-  const activeClass = 'bg-indigo-600 text-white';
+  const activeClass = 'bg-indigo-600 text-white shadow-sm';
   const inactiveClass =
-    'bg-gray-100 text-gray-700 hover:bg-gray-200';
+    'bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-300 hover:bg-gray-200 dark:hover:bg-slate-700';
 
   return (
     <div className="flex flex-wrap gap-2 justify-center mb-8" role="group" aria-label="Filter proyek berdasarkan tag">
@@ -82,20 +82,20 @@ function ProjectsSection() {
   );
 
   return (
-    <AnimatedSection id="projects" variants={fadeInUp} className="py-20 px-4 bg-gray-50">
+    <AnimatedSection id="projects" variants={fadeInUp} className="py-20 px-4 bg-gray-50 dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">
           Proyek
         </h2>
-        <p className="text-center text-gray-600 mb-10">
+        <p className="text-center text-gray-600 dark:text-slate-400 mb-10">
           Kumpulan proyek yang pernah saya kerjakan.
         </p>
 
         {/* Loading state */}
         {loading && (
           <div className="flex justify-center items-center py-20" aria-live="polite">
-            <span className="text-gray-500 text-sm">Memuat proyek…</span>
+            <span className="text-gray-500 dark:text-slate-400 text-sm">Memuat proyek…</span>
           </div>
         )}
 
@@ -109,7 +109,7 @@ function ProjectsSection() {
 
             {/* Empty state */}
             {filteredProjects.length === 0 && (
-              <p className="text-center text-gray-500 py-16" aria-live="polite">
+              <p className="text-center text-gray-500 dark:text-slate-400 py-16" aria-live="polite">
                 Tidak ada proyek yang ditemukan.
               </p>
             )}

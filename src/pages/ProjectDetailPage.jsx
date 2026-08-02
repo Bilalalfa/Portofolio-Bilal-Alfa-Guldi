@@ -71,20 +71,20 @@ const ProjectDetailPage = () => {
       />
 
       {/* All content lives inside a single <main> for correct semantics */}
-      <main className="mx-auto max-w-5xl px-4 sm:px-6 pb-16 pt-8">
+      <main className="mx-auto max-w-5xl px-4 sm:px-6 pb-16 pt-24 min-h-screen">
         {/* Back navigation */}
         <Link
           to="/#projects"
-          className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+          className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
         >
           ← Kembali ke Proyek
         </Link>
 
         {/* Hero / title */}
-        <h1 className="mt-6 text-3xl font-extrabold text-gray-900 sm:text-4xl">{title}</h1>
+        <h1 className="mt-6 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">{title}</h1>
 
         {shortDescription && (
-          <p className="mt-3 text-lg text-gray-600">{shortDescription}</p>
+          <p className="mt-3 text-lg text-gray-600 dark:text-slate-300">{shortDescription}</p>
         )}
 
         {/* Screenshots / images */}
@@ -93,7 +93,7 @@ const ProjectDetailPage = () => {
             {allImages.map((img, index) => (
               <div
                 key={img.url || index}
-                className="w-full overflow-hidden rounded-2xl bg-gray-100 border border-gray-200/80 shadow-md transition-shadow hover:shadow-lg"
+                className="w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-slate-800 border border-gray-200/80 dark:border-slate-700/80 shadow-md transition-shadow hover:shadow-lg"
               >
                 <img
                   src={img.url}
@@ -111,24 +111,24 @@ const ProjectDetailPage = () => {
         {/* Metadata: role */}
         {role && (
           <div className="mt-8">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-slate-400">
               Peran
             </h2>
-            <p className="mt-1 text-base text-gray-800">{role}</p>
+            <p className="mt-1 text-base text-gray-800 dark:text-slate-200">{role}</p>
           </div>
         )}
 
         {/* Tech stack */}
         {techStack.length > 0 && (
           <div className="mt-6">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-slate-400">
               Tech Stack
             </h2>
             <ul className="mt-2 flex flex-wrap gap-2" aria-label="Daftar teknologi yang digunakan">
               {techStack.map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-800"
+                  className="rounded-full bg-indigo-100 dark:bg-indigo-950/70 border border-transparent dark:border-indigo-800/50 px-3 py-1 text-sm font-medium text-indigo-800 dark:text-indigo-300"
                 >
                   {tech}
                 </li>
@@ -140,10 +140,10 @@ const ProjectDetailPage = () => {
         {/* Detailed description */}
         {descriptionText && (
           <div className="mt-8">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-slate-400">
               Deskripsi
             </h2>
-            <p className="mt-2 whitespace-pre-wrap text-base leading-relaxed text-gray-700">
+            <p className="mt-2 whitespace-pre-wrap text-base leading-relaxed text-gray-700 dark:text-slate-300">
               {descriptionText}
             </p>
           </div>
@@ -157,7 +157,7 @@ const ProjectDetailPage = () => {
                 href={liveDemoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 dark:bg-blue-600 text-white font-semibold px-5 py-2.5 text-sm shadow hover:bg-blue-700 dark:hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
               >
                 <FiExternalLink className="w-4 h-4" />
                 <span>Live Demo</span>
@@ -168,7 +168,7 @@ const ProjectDetailPage = () => {
                 href={sourceCodeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-700 transition-colors"
+                className="inline-block rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-5 py-2.5 text-sm font-semibold text-gray-700 dark:text-slate-200 shadow hover:bg-gray-50 dark:hover:bg-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-700 transition-colors"
               >
                 <div className="inline-flex items-center gap-2">
                   <FiGithub className="w-4 h-4" />

@@ -62,12 +62,12 @@ const BlogDetailPage = () => {
     <>
       <SEOHead title={seoTitle} description={post.excerpt} />
 
-      <main className="min-h-screen bg-white dark:bg-gray-900">
-        <article className="max-w-3xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <main className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+        <article className="max-w-3xl mx-auto px-4 pt-24 pb-16 sm:px-6 lg:px-8">
           {/* Back link */}
           <Link
             to="/#blog"
-            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 mb-8 transition-colors"
+            className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 mb-8 transition-colors"
           >
             ← Kembali ke Blog
           </Link>

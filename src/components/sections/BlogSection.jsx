@@ -26,14 +26,14 @@ const staggerItem = {
  * Requirements: 7.1, 7.2
  */
 function BlogSection() {
-  const { data: posts, loading, error } = useCMSBlogPosts();
+  const { data: posts, loading } = useCMSBlogPosts();
 
   return (
-    <AnimatedSection id="blog" variants={fadeInUp} className="py-16 px-4 sm:px-6 lg:px-8">
+    <AnimatedSection id="blog" variants={fadeInUp} className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Blog</h2>
-        <p className="text-gray-500 mb-10">Artikel dan tulisan terbaru</p>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Blog</h2>
+        <p className="text-gray-500 dark:text-slate-400 mb-10">Artikel dan tulisan terbaru</p>
 
         {/* Loading state */}
         {loading && (

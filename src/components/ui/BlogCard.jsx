@@ -16,9 +16,9 @@ function BlogCard({ post }) {
   const { slug, title, excerpt, coverImage, publishedDate } = post;
 
   return (
-    <article className="flex flex-col rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+    <article className="flex flex-col rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800/80 shadow-md hover:shadow-xl dark:shadow-slate-950/50 transition-all duration-300">
       {/* Cover Image */}
-      <div className="relative w-full aspect-video bg-gray-100">
+      <div className="relative w-full aspect-video bg-gray-100 dark:bg-slate-800">
         {coverImage ? (
           <img
             src={coverImage.url}
@@ -28,7 +28,7 @@ function BlogCard({ post }) {
           />
         ) : (
           <div
-            className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400 text-sm"
+            className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-slate-800 text-gray-400 dark:text-slate-500 text-sm"
             aria-label={`Cover untuk ${title}`}
           >
             No image
@@ -41,25 +41,25 @@ function BlogCard({ post }) {
         {/* Date */}
         <time
           dateTime={publishedDate}
-          className="text-xs text-gray-500 font-medium uppercase tracking-wide"
+          className="text-xs text-gray-500 dark:text-slate-400 font-medium uppercase tracking-wide"
         >
           {formatDate(publishedDate)}
         </time>
 
         {/* Title */}
-        <h3 className="text-lg font-semibold text-gray-900 leading-snug">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
           {title}
         </h3>
 
         {/* Excerpt */}
-        <p className="text-sm text-gray-600 leading-relaxed flex-1 line-clamp-3">
+        <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed flex-1 line-clamp-3">
           {excerpt}
         </p>
 
         {/* Read more link */}
         <Link
           to={`/blog/${slug}`}
-          className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors duration-200"
+          className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors duration-200"
         >
           Baca Selengkapnya
           <span aria-hidden="true">→</span>

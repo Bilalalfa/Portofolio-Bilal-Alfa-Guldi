@@ -38,14 +38,14 @@ function TimelineSection() {
     <AnimatedSection
       id="timeline"
       variants={fadeInUp}
-      className="py-16 px-4 sm:px-6 lg:px-8"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 transition-colors duration-300"
     >
       <div className="max-w-3xl mx-auto">
         {/* Section heading */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           Pendidikan &amp; Pengalaman
         </h2>
-        <p className="text-gray-500 mb-10">
+        <p className="text-gray-500 dark:text-slate-400 mb-10">
           Perjalanan akademik dan profesional saya
         </p>
 
