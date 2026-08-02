@@ -1,0 +1,71 @@
+import { Link } from 'react-router-dom';
+import TagBadge from './TagBadge';
+
+/**
+ * ProjectCard component — displays a project summary card.
+ *
+ * @param {{ project: {
+ *   slug: string,
+ *   title: string,
+ *   shortDescription: string,
+ *   tags: string[],
+ *   thumbnailImage: { url: string, alt: string } | null
+ * }}} props
+ */
+function ProjectCard({ project }) {
+  const { slug, title, shortDescription, tags = [], thumbnailImage } = project;
+
+  return (
+    <article className="flex flex-col h-full rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+      {/* Thumbnail */}
+      <div className="relative w-full aspect-video bg-gray-100">
+        {thumbnailImage ? (
+          <img
+            src={thumbnailImage.url}
+            alt={thumbnailImage.alt || title}
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400 text-sm"
+            aria-label={`Thumbnail untuk ${title}`}
+          >
+            No image
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-5 gap-3">
+        <h3 className="text-lg font-semibold text-gray-900 leading-snug">
+          {title}
+        </h3>
+
+        <p className="text-sm text-gray-600 leading-relaxed flex-1">
+          {shortDescription}
+        </p>
+
+        {/* Tags */}
+        {tags.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <TagBadge key={tag} tag={tag} />
+            ))}
+          </div>
+        )}
+
+        {/* CTA Link */}
+        <Link
+          to={`/projects/${slug}`}
+          className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors duration-200"
+        >
+          Lihat Detail
+          <span aria-hidden="true">→</span>
+        </Link>
+      </div>
+    </article>
+  );
+}
+
+export default ProjectCard;
