@@ -70,7 +70,7 @@ const ProjectDetailPage = () => {
       />
 
       {/* All content lives inside a single <main> for correct semantics */}
-      <main className="mx-auto max-w-4xl px-4 pb-16 pt-8">
+      <main className="mx-auto max-w-5xl px-4 sm:px-6 pb-16 pt-8">
         {/* Back navigation */}
         <Link
           to="/#projects"
@@ -88,17 +88,21 @@ const ProjectDetailPage = () => {
 
         {/* Screenshots / images */}
         {allImages.length > 0 && (
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="mt-8 flex flex-col gap-6">
             {allImages.map((img, index) => (
-              <img
+              <div
                 key={img.url || index}
-                src={img.url}
-                alt={img.alt || `Screenshot ${index + 1} dari ${title}`}
-                loading="lazy"
-                width={img.width}
-                height={img.height}
-                className="w-full rounded-lg object-cover shadow"
-              />
+                className="w-full overflow-hidden rounded-2xl bg-gray-100 border border-gray-200/80 shadow-md transition-shadow hover:shadow-lg"
+              >
+                <img
+                  src={img.url}
+                  alt={img.alt || `Screenshot ${index + 1} dari ${title}`}
+                  loading="lazy"
+                  width={img.width}
+                  height={img.height}
+                  className="w-full h-auto max-h-[600px] md:max-h-[750px] object-cover object-top"
+                />
+              </div>
             ))}
           </div>
         )}
