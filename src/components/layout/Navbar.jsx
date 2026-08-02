@@ -41,10 +41,15 @@ const Navbar = () => {
         {/* Logo / Site name */}
         <a
           href="#hero"
-          className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 rounded"
+          className="flex items-center gap-2.5 text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 rounded"
           onClick={closeMenu}
         >
-          Bilal Alfa Guldi
+          <img
+            src="/logo-tab.png"
+            alt="Logo Bilal Alfa Guldi"
+            className="w-8 h-8 rounded-full object-cover border border-gray-200"
+          />
+          <span>Bilal Alfa Guldi</span>
         </a>
 
         {/* Desktop navigation links */}

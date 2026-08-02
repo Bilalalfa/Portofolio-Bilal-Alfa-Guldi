@@ -20,11 +20,11 @@ export const timeline = [
     id: 'edu-001',
     type: 'education',
     institutionOrCompany: 'Bartin University',
-    roleOrDegree: 'Undergraduate of Computer Science',
+    roleOrDegree: 'Computer Science Student',
     startDate: '2023-09',
     endDate: undefined,
     description:
-      'Aktif mengikuti berbagai kegiatan akademik dan non-akademik. Berhasil mendapatkan IPK 3.50 selama masa studi dan aktif dalam berbagai organisasi mahasiswa internasional.',
+      'Aktif mengikuti berbagai kegiatan akademik dan non-akademik, termasuk organisasi mahasiswa internasional, serta beberapa kompetisi UI/UX Design yang diselenggarakan oleh institusi di luar perkuliahan.',
   },
   {
     id: 'exp-001',
@@ -34,7 +34,7 @@ export const timeline = [
     startDate: '2026-03',
     endDate: '2026-06',
     description:
-      'Bertanggung jawab penuh atas pelaksanaan Digination Festival 2026, salah satu acara terbesar yang diselenggarakan oleh Himpunan Mahasiswa Ilmu Komputer. Mengelola tim yang terdiri dari 150+ panitia yang dibagi ke dalam 10 divisi berbeda, memastikan koordinasi yang mulus dan pencapaian target acara.',
+      'Bertanggung jawab penuh atas pelaksanaan Digination Festival 2026, salah satu acara terbesar yang diselenggarakan oleh Direktorat Komunikasi dan Informasi PPI Dunia. Memimpin tim yang terdiri dari 65+ panitia yang terbagi ke dalam 7 divisi, dengan mengangkat tema IoT dan teknologi, serta menyelenggarakan rangkaian perlombaan dan webinar bersama pembicara yang ahli di bidangnya.',
   },
   {
     id: 'exp-002',
@@ -44,7 +44,7 @@ export const timeline = [
     startDate: '2026-01',
     endDate: '2026-05',
     description:
-      'Bertanggung jawab merancang antarmuka pengguna (UI) dan pengalaman pengguna (UX) untuk website resmi PPI Bartin, memastikan tampilan yang modern dan navigasi yang intuitif untuk anggota komunitas.',
+      'Merancang antarmuka pengguna (UI) dan pengalaman pengguna (UX) untuk website resmi PPI Bartin, memastikan tampilan yang modern dan navigasi yang mudah digunakan.',
   },
   {
     id: 'exp-003',
@@ -54,7 +54,7 @@ export const timeline = [
     startDate: '2025-10',
     endDate: undefined,
     description:
-      'Bertanggung jawab penuh atas pengembangan dan pemeliharaan platform digital PPI Dunia, termasuk website resmi dan aplikasi mobile. ',
+      'Bertanggung jawab atas pelaksanaan program kerja Divisi Inovasi Digital, meliputi penyelenggaraan Digination Festival hingga pengelolaan berbagai platform digital PPI Dunia.',
   },
 ];
 

@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { useCMSProjects } from '../hooks/useCMSProjects';
 import NotFoundPage from './NotFoundPage';
 import SEOHead from '../components/ui/SEOHead';
@@ -156,9 +157,10 @@ const ProjectDetailPage = () => {
                 href={liveDemoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
               >
-                Live Demo ↗
+                <FiExternalLink className="w-4 h-4" />
+                <span>Live Demo</span>
               </a>
             )}
             {showSourceCode && (
@@ -168,7 +170,10 @@ const ProjectDetailPage = () => {
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-700 transition-colors"
               >
-                Source Code ↗
+                <div className="inline-flex items-center gap-2">
+                  <FiGithub className="w-4 h-4" />
+                  <span>Source Code</span>
+                </div>
               </a>
             )}
           </div>
