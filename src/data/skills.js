@@ -14,7 +14,7 @@
 export const skills = [
   // Frontend
   { name: 'HTML5', icon: 'SiHtml5', category: 'Frontend' },
-  { name: 'CSS3', icon: 'SiCss3', category: 'Frontend' },
+  { name: 'CSS3', icon: 'SiCss', category: 'Frontend' },
   { name: 'JavaScript', icon: 'SiJavascript', category: 'Frontend' },
 
   // Backend

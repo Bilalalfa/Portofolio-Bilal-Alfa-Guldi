@@ -88,7 +88,7 @@ export const projects = [
       'Aplikasi e-commerce mobile yang menyediakan akses informasi dan bantuan berbasis kecerdasan buatan tanpa memerlukan koneksi internet.',
     detailedDescription:
       'MegaShop is an mobile e-commerce app designed to provide users with convenient access to information and AI-powered assistance without relying on an internet connection. The application leverages the capabilities of Ollama\'s local large language models (LLMs) to process user queries and generate intelligent responses. The interface prioritizes ease of use, quick access to core features, and a seamless user experience for daily tasks and information retrieval.',
-    techStack: ['Figma', 'UI/UX Design', 'Prototyping', 'User Research', 'Mobile App'],
+    techStack: ['Flutter', 'Firebase', 'Figma', 'UI/UX Design', 'Prototyping', 'Mobile App'],
     tags: ['Mobile', 'UI/UX'],
     role: 'UI/UX Designer',
     thumbnailImage: {

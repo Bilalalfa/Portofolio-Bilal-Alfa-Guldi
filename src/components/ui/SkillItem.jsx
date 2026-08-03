@@ -2,6 +2,12 @@ import * as SiIcons from 'react-icons/si';
 import * as FaIcons from 'react-icons/fa';
 import * as MdIcons from 'react-icons/md';
 
+const ICON_ALIASES = {
+  SiCss3: 'SiCss',
+  FaCss3: 'SiCss',
+  FaCss3Alt: 'SiCss',
+};
+
 /**
  * Dynamically resolves a react-icons icon component by name.
  * Searches si (Simple Icons), fa (Font Awesome), and md (Material Design) icon sets.
@@ -10,10 +16,11 @@ import * as MdIcons from 'react-icons/md';
  */
 const resolveIcon = (iconName) => {
   if (!iconName) return null;
+  const name = ICON_ALIASES[iconName] || iconName;
   return (
-    SiIcons[iconName] ||
-    FaIcons[iconName] ||
-    MdIcons[iconName] ||
+    SiIcons[name] ||
+    FaIcons[name] ||
+    MdIcons[name] ||
     null
   );
 };
