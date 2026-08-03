@@ -81,56 +81,56 @@ export const projects = [
     sourceCodeUrl: null,
     category: 'UI/UX Design',
   },
-  /* {
-    slug: 'ollama-vision',
-    title: 'Ollama Vision (Offline AI Personal Assistant)',
-    shortDescription:
-      'Aplikasi asisten AI personal offline yang menyediakan akses informasi dan bantuan berbasis kecerdasan buatan tanpa memerlukan koneksi internet.',
-    detailedDescription:
-      'Ollama Vision is an offline AI personal assistant application designed to provide users with convenient access to information and AI-powered assistance without relying on an internet connection. The application leverages the capabilities of Ollama\'s local large language models (LLMs) to process user queries and generate intelligent responses. The interface prioritizes ease of use, quick access to core features, and a seamless user experience for daily tasks and information retrieval.',
-    techStack: ['React', 'Tailwind CSS', 'Ollama API', 'JavaScript', 'Web App'],
-    tags: ['AI', 'Web App'],
-    role: 'UI/UX Designer',
-    thumbnailImage: {
-      url: '/OllamaVision.png',
-      alt: 'Ollama Vision (Offline AI Personal Assistant) Design Showcase',
-    },
-    images: [
-      {
-        url: '/OllamaVision.png',
-        alt: 'Ollama Vision (Offline AI Personal Assistant) Design Showcase',
-      },
-    ],
-    liveDemoUrl:
-      'https://www.figma.com/proto/98qB9k4GNt48lftK1xZEjR/Website-PPI-Bartin?node-id=4-154&viewport=-127%2C1744%2C0.54&t=GILrrZjaAM8GOPGq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=340%3A405&page-id=0%3A1',
-    sourceCodeUrl: null,
-    category: 'UI/UX Design',
-  }, 
   {
-    slug: 'ollama-vision',
-    title: 'Ollama Vision (Offline AI Personal Assistant)',
+    slug: 'megashop',
+    title: 'MegaShop Mobile App',
     shortDescription:
-      'Aplikasi asisten AI personal offline yang menyediakan akses informasi dan bantuan berbasis kecerdasan buatan tanpa memerlukan koneksi internet.',
+      'Aplikasi e-commerce mobile yang menyediakan akses informasi dan bantuan berbasis kecerdasan buatan tanpa memerlukan koneksi internet.',
     detailedDescription:
-      'Ollama Vision is an offline AI personal assistant application designed to provide users with convenient access to information and AI-powered assistance without relying on an internet connection. The application leverages the capabilities of Ollama\'s local large language models (LLMs) to process user queries and generate intelligent responses. The interface prioritizes ease of use, quick access to core features, and a seamless user experience for daily tasks and information retrieval.',
-    techStack: ['React', 'Tailwind CSS', 'Ollama API', 'JavaScript', 'Web App'],
-    tags: ['AI', 'Web App'],
+      'MegaShop is an mobile e-commerce app designed to provide users with convenient access to information and AI-powered assistance without relying on an internet connection. The application leverages the capabilities of Ollama\'s local large language models (LLMs) to process user queries and generate intelligent responses. The interface prioritizes ease of use, quick access to core features, and a seamless user experience for daily tasks and information retrieval.',
+    techStack: ['Figma', 'UI/UX Design', 'Prototyping', 'User Research', 'Mobile App'],
+    tags: ['Mobile', 'UI/UX'],
     role: 'UI/UX Designer',
     thumbnailImage: {
-      url: '/OllamaVision.png',
-      alt: 'Ollama Vision (Offline AI Personal Assistant) Design Showcase',
+      url: '/MegaShop.png',
+      alt: 'MegaShop Mobile App Design Showcase',
     },
     images: [
       {
-        url: '/OllamaVision.png',
-        alt: 'Ollama Vision (Offline AI Personal Assistant) Design Showcase',
+        url: '/MegaShop.png',
+        alt: 'MegaShop Mobile App Design Showcase',
       },
     ],
     liveDemoUrl:
-      'https://www.figma.com/proto/98qB9k4GNt48lftK1xZEjR/Website-PPI-Bartin?node-id=4-154&viewport=-127%2C1744%2C0.54&t=GILrrZjaAM8GOPGq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=340%3A405&page-id=0%3A1',
+      'https://www.figma.com/proto/t8YnBpd0o1h3y4o5z9q6r7/MegaShop-Mobile-App?node-id=4-154&viewport=-127%2C1744%2C0.54&t=GILrrZjaAM8GOPGq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=340%3A405&page-id=0%3A1',
     sourceCodeUrl: null,
     category: 'UI/UX Design',
-  },*/
+  },
+  {
+    slug: 'turk-zona',
+    title: 'Turk Zona Website',
+    shortDescription:
+      'Website belajar bahasa turki 1 on 1.',
+    detailedDescription:
+      'Website belajar bahasa turki 1 on 1.',
+    techStack: ['Website', 'Landing Page', 'HTML', 'CSS', 'JavaScript'],
+    tags: ['Website', 'Landing Page'],
+    role: 'UI/UX Designer',
+    thumbnailImage: {
+      url: '/Turk-Zona-Website.png',
+      alt: 'Turk Zona Website',
+    },
+    images: [
+      {
+        url: '/Turk-Zona-Website.png',
+        alt: 'Turk Zona Website',
+      },
+    ],
+    liveDemoUrl:
+      'https://turk-zona-website.vercel.app/',
+    sourceCodeUrl: null,
+    category: 'Landing Page',
+  },
 ];
 
 export default projects;
