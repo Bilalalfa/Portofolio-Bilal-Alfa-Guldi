@@ -131,6 +131,31 @@ export const projects = [
     sourceCodeUrl: null,
     category: 'Landing Page',
   },
+  {
+    slug: 'ugc-portofolio',
+    title: 'UGC Portofolio',
+    shortDescription:
+      'Portofolio UGC untuk mempermudah mencari client.',
+    detailedDescription:
+      'Portofolio UGC untuk mempermudah mencari client.',
+    techStack: ['Next JS', 'UI/UX Design', 'Figma', 'Prototyping', 'Website'],
+    tags: ['Next JS', 'UI/UX'],
+    role: 'UI/UX Designer & Frontend Developer',
+    thumbnailImage: {
+      url: '/UGC_Portofolio.png',
+      alt: 'UGC Portofolio',
+    },
+    images: [
+      {
+        url: '/UGC_Portofolio.png',
+        alt: 'UGC Portofolio',
+      },
+    ],
+    liveDemoUrl:
+      'https://bilalalfa-red.vercel.app/',
+    sourceCodeUrl: null,
+    category: 'Landing Page',
+  },
 ];
 
 export default projects;
