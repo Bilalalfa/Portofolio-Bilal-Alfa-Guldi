@@ -111,7 +111,7 @@ const ContactSection = () => {
                   : 'border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800'
               }`}
               placeholder="Your full name"
-              {...register('name', { required: 'Nama wajib diisi' })}
+              {...register('name', { required: 'Name is required' })}
             />
             {errors.name && (
               <p id="name-error" role="alert" className="text-sm text-red-600 dark:text-red-400">
@@ -138,10 +138,10 @@ const ContactSection = () => {
               }`}
               placeholder="your@email.com"
               {...register('email', {
-                required: 'Email wajib diisi',
+                required: 'Email is required',
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: 'Format email tidak valid',
+                  message: 'Please enter a valid email address',
                 },
               })}
             />
@@ -168,7 +168,7 @@ const ContactSection = () => {
                   : 'border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800'
               }`}
               placeholder="Write your message here..."
-              {...register('message', { required: 'Pesan wajib diisi' })}
+              {...register('message', { required: 'Message is required' })}
             />
             {errors.message && (
               <p id="message-error" role="alert" className="text-sm text-red-600 dark:text-red-400">

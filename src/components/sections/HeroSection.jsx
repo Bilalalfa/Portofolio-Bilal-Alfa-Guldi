@@ -3,7 +3,7 @@ import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 // Owner info — update these values as needed
 const OWNER_NAME = 'Bilal Alfa Guldi';
-const TAGLINE = 'UI/UX Designer & Front-end Developer';
+const TAGLINE = 'UI/UX Designer & Flutter Developer';
 const CTA_LABEL = 'View My Projects';
 const CTA_TARGET = '#projects';
 
@@ -57,7 +57,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/home-bg.png"
+          src="/home-bg.webp"
           alt="Hero Background"
           className="h-full w-full object-cover object-center"
         />
@@ -77,6 +77,16 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
+        <motion.p
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-4 py-1.5 text-sm font-medium text-emerald-200 backdrop-blur"
+          variants={getVariant('tagline')}
+          initial={initialState}
+          animate="visible"
+        >
+          <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
+          Open to UI/UX &amp; Flutter internships · Remote or Türkiye
+        </motion.p>
+
         <motion.h1
           className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl"
           variants={getVariant('name')}

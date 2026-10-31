@@ -17,7 +17,7 @@ const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
  */
 const PageLoadingFallback = () => (
   <div className="flex items-center justify-center min-h-screen dark:bg-slate-950 dark:text-slate-300">
-    <p className="text-gray-500 dark:text-slate-400">Memuat...</p>
+    <p className="text-gray-500 dark:text-slate-400">Loading...</p>
   </div>
 );
 

@@ -14,8 +14,8 @@ import ContactSection from '../components/sections/ContactSection';
 const HomePage = () => (
   <>
     <SEOHead
-      title="Bilal Alfa Guldi"
-      description="Portfolio website showcasing projects, skills, and experience"
+      title="Bilal Alfa Guldi — UI/UX Designer"
+      description="Bilal Alfa Guldi — UI/UX Designer & Flutter Developer. Award-winning UI/UX projects, case studies and experience. Open to internships."
     />
     <main>
       <HeroSection />

@@ -11,15 +11,15 @@ import {
 import { sendChatMessage } from '../../services/aiService';
 
 const SUGGESTED_QUESTIONS = [
-  '💡 Apa saja skill Bilal?',
-  '🚀 Proyek apa yang dibuat Bilal?',
-  '🎓 Pendidikan & Pengalaman PPI?',
-  '📩 Kontak Bilal',
+  '💡 What are Bilal\'s skills?',
+  '🚀 What has Bilal built?',
+  '🏆 Awards & experience',
+  '📩 How can I contact Bilal?',
 ];
 
 const INITIAL_WELCOME = {
   role: 'model',
-  text: 'Halo! 👋 Saya **Bilal AI Assistant**. Mau tahu lebih banyak tentang skill, proyek, atau pengalaman organisasi Bilal? Silakan tanya saya atau klik salah satu topik di bawah ini!',
+  text: 'Hi! 👋 I\'m **Bilal\'s AI Assistant**. Ask me about his skills, projects, awards or experience — or pick a topic below. (You can also ask in Indonesian or Turkish.)',
   timestamp: new Date(),
 };
 
@@ -126,7 +126,7 @@ export default function AIChatWidget() {
         ...prev,
         {
           role: 'model',
-          text: 'Maaf, terjadi masalah saat menghubungkan ke AI. Silakan coba beberapa saat lagi!',
+          text: 'Sorry, something went wrong while connecting to the AI. Please try again in a moment!',
           timestamp: new Date(),
         },
       ]);
@@ -158,7 +158,7 @@ export default function AIChatWidget() {
               exit={{ scale: 0, opacity: 0 }}
               onClick={() => setIsOpen(true)}
               className="group relative flex items-center gap-2.5 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-4 py-3.5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-600"
-              aria-label="Buka Chat AI Assistant"
+              aria-label="Open AI assistant chat"
             >
               <div className="relative flex items-center justify-center">
                 <FiZap className="w-5 h-5 text-yellow-300 animate-pulse" />
@@ -168,7 +168,7 @@ export default function AIChatWidget() {
                 </span>
               </div>
               <span className="font-semibold text-sm tracking-wide hidden sm:inline">
-                Tanya AI Bilal
+                Ask Bilal's AI
               </span>
             </motion.button>
           )}
@@ -208,14 +208,14 @@ export default function AIChatWidget() {
               <div className="flex items-center gap-1">
                 <button
                   onClick={handleClearChat}
-                  title="Bersihkan chat"
+                  title="Clear chat"
                   className="p-1.5 hover:bg-white/10 rounded-lg text-indigo-100 transition-colors"
                 >
                   <FiTrash2 className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  title="Tutup"
+                  title="Close"
                   className="p-1.5 hover:bg-white/10 rounded-lg text-indigo-100 transition-colors"
                 >
                   <FiX className="w-5 h-5" />
@@ -305,7 +305,7 @@ export default function AIChatWidget() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Tanyakan sesuatu tentang Bilal..."
+                  placeholder="Ask something about Bilal..."
                   className="flex-1 bg-transparent text-xs sm:text-sm text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-500 focus:outline-none py-1"
                   disabled={isLoading}
                 />
@@ -313,7 +313,7 @@ export default function AIChatWidget() {
                   onClick={() => handleSend()}
                   disabled={!input.trim() || isLoading}
                   className="p-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 disabled:hover:bg-indigo-600 text-white transition-all shadow-sm shrink-0"
-                  aria-label="Kirim Pesan"
+                  aria-label="Send message"
                 >
                   <FiSend className="w-4 h-4" />
                 </button>

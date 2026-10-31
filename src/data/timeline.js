@@ -19,42 +19,52 @@ export const timeline = [
   {
     id: 'edu-001',
     type: 'education',
-    institutionOrCompany: 'Bartin University',
-    roleOrDegree: 'Computer Science Student',
+    institutionOrCompany: 'Bartın University, Türkiye',
+    roleOrDegree: 'B.Sc. Computer Technology and Information Systems',
     startDate: '2023-09',
     endDate: undefined,
     description:
-      'Aktif mengikuti berbagai kegiatan akademik dan non-akademik, termasuk organisasi mahasiswa internasional, serta beberapa kompetisi UI/UX Design yang diselenggarakan oleh institusi di luar perkuliahan.',
+      'Expected graduation: July 2027. Relevant coursework: UI/UX Design, Human–Computer Interaction, Visual Programming and Software Engineering. Two-time UI/UX competition winner: 3rd place at the Teknofest Creathon and 2nd place at the PPI Dunia UI/UX Design Competition.',
   },
   {
     id: 'exp-001',
     type: 'experience',
-    institutionOrCompany: 'Digination Festival 2026',
-    roleOrDegree: 'Chief of Organizing Committee',
+    institutionOrCompany: 'Digination Festival 2026 · PPI Dunia',
+    roleOrDegree: 'Chief Executive',
     startDate: '2026-03',
     endDate: '2026-06',
     description:
-      'Bertanggung jawab penuh atas pelaksanaan Digination Festival 2026, salah satu acara terbesar yang diselenggarakan oleh Direktorat Komunikasi dan Informasi PPI Dunia. Memimpin tim yang terdiri dari 65+ panitia yang terbagi ke dalam 7 divisi, dengan mengangkat tema IoT dan teknologi, serta menyelenggarakan rangkaian perlombaan dan webinar bersama pembicara yang ahli di bidangnya.',
+      "Led a 78-member committee and 6 division heads to deliver one of PPI Dunia's largest student-led technology events. Organized a national IoT Innovation Competition with 21 teams and technology webinars attended by 300+ participants, managing planning, stakeholder relations and operations end to end.",
   },
   {
     id: 'exp-002',
     type: 'experience',
-    institutionOrCompany: 'PPI Bartin',
-    roleOrDegree: 'UI/UX Designer',
+    institutionOrCompany: 'PPI Bartın',
+    roleOrDegree: 'UI/UX Designer — Official Website',
     startDate: '2026-01',
     endDate: '2026-05',
     description:
-      'Merancang antarmuka pengguna (UI) dan pengalaman pengguna (UX) untuk website resmi PPI Bartin, memastikan tampilan yang modern dan navigasi yang mudah digunakan.',
+      "Designed the UX/UI and information architecture of PPI Bartın's official website, iterating on the design through reviews and feedback from developers and users.",
   },
   {
     id: 'exp-003',
     type: 'experience',
-    institutionOrCompany: 'PPI Dunia',
-    roleOrDegree: 'Head of Division of Digital Inovation',
-    startDate: '2025-10',
-    endDate: undefined,
+    institutionOrCompany: 'Directorate of Communication & Information · PPI Dunia',
+    roleOrDegree: 'Head of Digital Innovation Subdivision',
+    startDate: '2025-11',
+    endDate: '2026-07',
     description:
-      'Bertanggung jawab atas pelaksanaan program kerja Divisi Inovasi Digital, meliputi penyelenggaraan Digination Festival hingga pengelolaan berbagai platform digital PPI Dunia.',
+      'Planned innovation programs and designed competition and webinar concepts on emerging technologies. Prepared competition frameworks, judging criteria and technical guidelines, and built connections with practitioners, mentors and speakers.',
+  },
+  {
+    id: 'exp-004',
+    type: 'experience',
+    institutionOrCompany: 'PPI Bartın',
+    roleOrDegree: 'Head of Creative Media',
+    startDate: '2024-04',
+    endDate: '2025-03',
+    description:
+      "Led the content, design and social media teams, growing Instagram and TikTok reach through data-driven content strategy. Launched PPI Bartın's first official LinkedIn page and kept branding consistent across channels.",
   },
 ];
 

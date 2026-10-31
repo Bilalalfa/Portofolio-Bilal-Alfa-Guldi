@@ -44,7 +44,7 @@ const BlogDetailPage = () => {
     return (
       <main className="flex items-center justify-center min-h-screen">
         <p className="text-gray-500" aria-live="polite">
-          Memuat artikel...
+          Loading article...
         </p>
       </main>
     );
@@ -69,7 +69,7 @@ const BlogDetailPage = () => {
             to="/#blog"
             className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 mb-8 transition-colors"
           >
-            ← Kembali ke Blog
+            ← Back to Blog
           </Link>
 
           {/* Cover image */}

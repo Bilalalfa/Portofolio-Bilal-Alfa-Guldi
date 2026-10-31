@@ -36,13 +36,13 @@ function FilterBar({ tags, activeTag, onFilter }) {
     'bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-300 hover:bg-gray-200 dark:hover:bg-slate-700';
 
   return (
-    <div className="flex flex-wrap gap-2 justify-center mb-8" role="group" aria-label="Filter proyek berdasarkan tag">
+    <div className="flex flex-wrap gap-2 justify-center mb-8" role="group" aria-label="Filter projects by tag">
       <button
         className={`${baseClass} ${activeTag === null ? activeClass : inactiveClass}`}
         onClick={() => onFilter(null)}
         aria-pressed={activeTag === null}
       >
-        Semua
+        All
       </button>
       {tags.map((tag) => (
         <button
@@ -86,16 +86,16 @@ function ProjectsSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">
-          Proyek
+          Projects
         </h2>
         <p className="text-center text-gray-600 dark:text-slate-400 mb-10">
-          Kumpulan proyek yang pernah saya kerjakan.
+          Selected UI/UX and development work, from award-winning competition entries to real products.
         </p>
 
         {/* Loading state */}
         {loading && (
           <div className="flex justify-center items-center py-20" aria-live="polite">
-            <span className="text-gray-500 dark:text-slate-400 text-sm">Memuat proyek…</span>
+            <span className="text-gray-500 dark:text-slate-400 text-sm">Loading projects…</span>
           </div>
         )}
 
@@ -110,7 +110,7 @@ function ProjectsSection() {
             {/* Empty state */}
             {filteredProjects.length === 0 && (
               <p className="text-center text-gray-500 dark:text-slate-400 py-16" aria-live="polite">
-                Tidak ada proyek yang ditemukan.
+                No projects found.
               </p>
             )}
 

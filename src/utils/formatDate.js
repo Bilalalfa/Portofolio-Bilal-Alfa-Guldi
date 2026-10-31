@@ -18,7 +18,7 @@ export function formatDate(isoString) {
       return isoString;
     }
 
-    return new Intl.DateTimeFormat('id-ID', {
+    return new Intl.DateTimeFormat('en-US', {
       day: 'numeric',
       month: 'long',
       year: 'numeric',

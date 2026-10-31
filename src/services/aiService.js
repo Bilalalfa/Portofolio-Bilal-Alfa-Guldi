@@ -6,67 +6,90 @@
  */
 
 const SYSTEM_PROMPT = `
-Kamu adalah "Bilal AI Assistant", asisten kecerdasan buatan resmi untuk situs web portofolio Bilal Alfa Guldi.
-Tugas utama kamu adalah membantu pengunjung mengenal Bilal Alfa Guldi secara ramah, profesional, dan informatif.
+You are "Bilal AI Assistant", the official AI assistant on Bilal Alfa Guldi's portfolio website.
+Your job is to help visitors (often recruiters) get to know Bilal in a friendly, professional and concise way.
 
-FAKTA TENTANG BILAL ALFA GULDI:
-1. PENDIDIKAN:
-   - Mahasiswa Ilmu Komputer (Computer Science Student) di Bartin University, Turki (mulai 2023 - sekarang).
-   - Aktif dalam kegiatan akademik dan non-akademik, kompetisi UI/UX Design, serta organisasi internasional.
+FACTS ABOUT BILAL ALFA GULDI:
+1. EDUCATION
+   - B.Sc. student in Computer Technology and Information Systems (Computer Science) at Bartın University, Türkiye (since 2023, expected graduation July 2027).
+   - Relevant coursework: UI/UX Design, Human–Computer Interaction, Visual Programming, Software Engineering.
+   - Certification: UI/UX Design Bootcamp (MySkill).
 
-2. PENGALAMAN ORGANISASI & KEPEMIMPINAN:
-   - Chief of Organizing Committee (Ketua Pelaksana) Digination Festival 2026 (Maret 2026 - Juni 2026): Memimpin 65+ panitia di 7 divisi di bawah Direktorat Komunikasi dan Informasi PPI Dunia. Mengangkat tema IoT dan Teknologi, menyelenggarakan kompetisi dan webinar nasional/internasional.
-   - Staff / Pengembang Divisi Inovasi Digital PPI Dunia (Oktober 2025 - sekarang): Mengelola platform digital PPI Dunia dan program kerja divisi.
-   - UI/UX Designer PPI Bartin (Januari 2026 - Mei 2026): Merancang tampilan antarmuka dan pengalaman pengguna untuk website resmi PPI Bartin.
+2. AWARDS
+   - 3rd Place — Teknofest N'Sosyal Super App Creathon (36-hour team competition).
+   - 2nd Place — PPI Dunia UI/UX Design Competition (Greenest app, team of 4).
 
-3. KEAHLIAN & SKILL:
-   - UI/UX Design (Figma, Wireframing, Prototyping, Design System, User Research)
-   - Web Development (React.js, JavaScript, HTML5, CSS3, Tailwind CSS, Vite)
-   - Tools & Workflow (Git, GitHub, VS Code)
-   - Soft Skills (Leadership, Project Management, Team Coordination, Problem Solving)
+3. PROJECTS
+   - N'Sosyal Super App: super-app concept combining social media, messaging, payments, transportation and food ordering; user flows, wireframes and a high-fidelity Figma prototype.
+   - Greenest: sustainable-living platform; personas, user journeys, user flows, UI design and pitch to judges.
+   - PPI Bartın Official Website: UX/UI and information architecture for the official website of the Indonesian Students Association in Bartın.
+   - Mega Shop: social commerce mobile app; Flutter front end plus UI/UX design.
+   - Ollama Vision: offline AI personal assistant desktop app built with Python, PyQt and Ollama, with task management features.
+   - Turk Zona: landing page for a 1-on-1 Turkish language learning service.
+   - UGC Portfolio: portfolio website built with Next.js.
 
-4. KONTAK & MEDIA SOSIAL:
-   - Gmail: bilalalfag35@gmail.com
+4. LEADERSHIP EXPERIENCE
+   - Chief Executive, Digination Festival 2026 by PPI Dunia (Mar 2026 – Jun 2026): led a 78-member committee and 6 division heads; organized a national IoT Innovation Competition with 21 teams and webinars with 300+ participants.
+   - Head of Digital Innovation Subdivision, Directorate of Communication & Information, PPI Dunia (Nov 2025 – Jul 2026).
+   - UI/UX Designer, PPI Bartın (Jan 2026 – May 2026).
+   - Head of Creative Media, PPI Bartın (Apr 2024 – Mar 2025): led content, design and social media teams and launched PPI Bartın's first LinkedIn page.
+
+5. SKILLS
+   - Design: Figma, User Research, Wireframing, Prototyping, Design Systems, Usability Testing, Human Interface Guidelines.
+   - Development: Flutter, Dart, Firebase, HTML, CSS, JavaScript, Python, React.
+   - Tools: Git, GitHub, VS Code.
+   - Languages: Indonesian (native), Turkish (professional working proficiency), English (intermediate).
+
+6. AVAILABILITY & CONTACT
+   - Open to UI/UX, product design and Flutter internships (remote or in Türkiye).
+   - Email: bilalalfag35@gmail.com
    - LinkedIn: https://www.linkedin.com/in/bilalalfaguldi/
    - GitHub: https://github.com/Bilalalfa
 
-ATURAN MERESPONS:
-- Berikan jawaban dalam Bahasa Indonesia yang ramah, sopan, singkat, dan mudah dipahami.
-- Gunakan format markdown sederhana (seperti bold atau bullet points) agar jawaban nyaman dibaca.
-- Jika ada pertanyaan di luar topik portofolio/profil Bilal, arahkan kembali dengan sopan ke informasi seputar Bilal.
+RESPONSE RULES
+- Reply in the same language the visitor uses (English, Indonesian or Turkish). Default to English.
+- Keep answers short, friendly and easy to read; use simple markdown (bold, bullet points).
+- Only state facts listed above. If you don't know something, say so and suggest contacting Bilal by email.
+- If a question is unrelated to Bilal, politely steer the conversation back to his profile.
 `;
 
 /**
  * Smart fallback mechanism when API key is missing or network fails.
+ * Matches English, Indonesian and Turkish keywords; answers in English.
  */
 function getFallbackResponse(userMessage) {
   const query = userMessage.toLowerCase();
+  const has = (...words) => words.some((w) => query.includes(w));
 
-  if (query.includes('siapa') || query.includes('tentang') || query.includes('bio') || query.includes('profile')) {
-    return 'Halo! 👋 **Bilal Alfa Guldi** adalah mahasiswa **Computer Science di Bartin University, Turki**, yang memiliki minat mendalam pada **UI/UX Design** dan **Web Development**. Bilal juga aktif memimpin berbagai proyek digital dan organisasi internasional seperti **PPI Dunia** dan **PPI Bartin**.';
+  if (has('who', 'about', 'bio', 'profile', 'siapa', 'tentang', 'kimdir', 'hakkında')) {
+    return "Hi! 👋 **Bilal Alfa Guldi** is a **Computer Science student at Bartın University, Türkiye** focused on **UI/UX and mobile product design**. He's a two-time design competition winner (Teknofest, PPI Dunia) and has led student tech teams of up to 78 people.";
   }
 
-  if (query.includes('skill') || query.includes('keahlian') || query.includes('kemampuan') || query.includes('bisa')) {
-    return 'Berikut adalah keahlian utama Bilal:\n- **UI/UX Design:** Figma, Wireframing, Prototyping, User Research\n- **Web Development:** React.js, JavaScript (ES6+), HTML/CSS, Tailwind CSS\n- **Tools:** Git, GitHub, Vite\n- **Soft Skills:** Leadership, Team Management, Problem Solving';
+  if (has('skill', 'keahlian', 'kemampuan', 'bisa', 'yetenek', 'tool')) {
+    return "Bilal's main skills:\n- **Design:** Figma, User Research, Wireframing, Prototyping, Design Systems, Usability Testing\n- **Development:** Flutter, Dart, Firebase, HTML/CSS, JavaScript, Python\n- **Languages:** Indonesian, Turkish (professional), English\n- **Soft skills:** Leadership, team coordination, project management";
   }
 
-  if (query.includes('proyek') || query.includes('project') || query.includes('portofolio') || query.includes('karya')) {
-    return 'Bilal telah merancang dan mengembangkan beberapa proyek menarik, di antaranya:\n- **Website Resmi PPI Bartin** (UI/UX Design)\n- **Platform Digination Festival 2026** (PPI Dunia)\n- Berbagai desain aplikasi mobile dan website portofolio interaktif.';
+  if (has('award', 'win', 'juara', 'prestasi', 'competition', 'lomba', 'ödül', 'yarışma', 'teknofest')) {
+    return "Bilal's awards:\n- 🥉 **3rd Place** — Teknofest N'Sosyal Super App Creathon\n- 🥈 **2nd Place** — PPI Dunia UI/UX Design Competition (Greenest)";
   }
 
-  if (query.includes('pengalaman') || query.includes('organisasi') || query.includes('kegiatan') || query.includes('digination')) {
-    return 'Pengalaman organisasi & kepemimpinan Bilal:\n- **Chief of Organizing Committee** Digination Festival 2026 (PPI Dunia) — Memimpin 65+ panitia di 7 divisi.\n- **UI/UX Designer** PPI Bartin (2026).\n- **Staf Divisi Inovasi Digital** PPI Dunia (2025 - Sekarang).';
+  if (has('project', 'proyek', 'portfolio', 'portofolio', 'karya', 'proje', 'work')) {
+    return "Some of Bilal's projects:\n- **N'Sosyal Super App** — Figma prototype, 3rd place at Teknofest\n- **Greenest** — sustainable-living app, 2nd place at PPI Dunia\n- **PPI Bartın Official Website** — UX/UI and information architecture\n- **Mega Shop** — social commerce app built with Flutter\n- **Ollama Vision** — offline AI assistant built with Python & PyQt";
   }
 
-  if (query.includes('kontak') || query.includes('hubungi') || query.includes('email') || query.includes('linkedin') || query.includes('github')) {
-    return 'Kamu bisa menghubungi Bilal melalui:\n- 📧 **Email:** bilalalfag35@gmail.com\n- 💼 **LinkedIn:** [linkedin.com/in/bilalalfaguldi](https://www.linkedin.com/in/bilalalfaguldi/)\n- 🐙 **GitHub:** [github.com/Bilalalfa](https://github.com/Bilalalfa)';
+  if (has('experience', 'pengalaman', 'organisasi', 'kegiatan', 'digination', 'leader', 'deneyim', 'ppi')) {
+    return "Bilal's leadership experience:\n- **Chief Executive**, Digination Festival 2026 (PPI Dunia) — led 78 committee members and 6 division heads\n- **Head of Digital Innovation Subdivision**, PPI Dunia (Nov 2025 – Jul 2026)\n- **UI/UX Designer**, PPI Bartın (Jan – May 2026)\n- **Head of Creative Media**, PPI Bartın (Apr 2024 – Mar 2025)";
   }
 
-  if (query.includes('pendidikan') || query.includes('kuliah') || query.includes('jurusan') || query.includes('kampus') || query.includes('bartin')) {
-    return 'Bilal saat ini menempuh pendidikan S1 **Computer Science (Ilmu Komputer) di Bartin University, Turki** (sejak tahun 2023). Bilal aktif menggabungkan teori akademis dengan praktik industri UI/UX & Web Development.';
+  if (has('contact', 'kontak', 'hubungi', 'email', 'linkedin', 'github', 'iletişim', 'hire', 'intern', 'magang', 'staj')) {
+    return "Bilal is **open to UI/UX, product design and Flutter internships** (remote or in Türkiye). You can reach him at:\n- 📧 **Email:** bilalalfag35@gmail.com\n- 💼 **LinkedIn:** [linkedin.com/in/bilalalfaguldi](https://www.linkedin.com/in/bilalalfaguldi/)\n- 🐙 **GitHub:** [github.com/Bilalalfa](https://github.com/Bilalalfa)";
   }
 
-  return 'Terima kasih atas pertanyaannya! 👋 Sebagai AI Assistant Bilal, saya bisa membantu menjelaskan mengenai **Skill, Proyek, Pengalaman Organisasi (PPI Dunia/PPI Bartin), Pendidikan, atau Kontak Bilal**. Ada yang ingin kamu ketahui lebih lanjut?';
+  if (has('education', 'pendidikan', 'kuliah', 'jurusan', 'kampus', 'university', 'bartin', 'bartın', 'eğitim', 'okul')) {
+    return "Bilal is studying **Computer Technology and Information Systems at Bartın University, Türkiye** (since 2023, expected graduation July 2027), with coursework in UI/UX Design, Human–Computer Interaction and Software Engineering.";
+  }
+
+  return "Thanks for your question! 👋 I can tell you about Bilal's **skills, projects, awards, experience, education or contact details**. What would you like to know?";
 }
 
 /**
@@ -89,7 +112,7 @@ export async function sendChatMessage(chatHistory) {
 
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: {

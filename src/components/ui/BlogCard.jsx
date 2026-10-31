@@ -29,7 +29,7 @@ function BlogCard({ post }) {
         ) : (
           <div
             className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-slate-800 text-gray-400 dark:text-slate-500 text-sm"
-            aria-label={`Cover untuk ${title}`}
+            aria-label={`Cover for ${title}`}
           >
             No image
           </div>

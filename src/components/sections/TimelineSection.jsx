@@ -43,10 +43,10 @@ function TimelineSection() {
       <div className="max-w-3xl mx-auto">
         {/* Section heading */}
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          Pendidikan &amp; Pengalaman
+          Education &amp; Experience
         </h2>
         <p className="text-gray-500 dark:text-slate-400 mb-10">
-          Perjalanan akademik dan profesional saya
+          My academic and leadership journey
         </p>
 
         {/* Loading state */}
@@ -54,13 +54,13 @@ function TimelineSection() {
           <div
             className="flex items-center justify-center py-20"
             aria-live="polite"
-            aria-label="Memuat timeline"
+            aria-label="Loading timeline"
           >
             <div
               className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"
               role="status"
             >
-              <span className="sr-only">Memuat...</span>
+              <span className="sr-only">Loading...</span>
             </div>
           </div>
         )}
@@ -68,7 +68,7 @@ function TimelineSection() {
         {/* Empty state */}
         {!loading && sortedEntries.length === 0 && (
           <div className="text-center py-20 text-gray-400">
-            <p className="text-lg">Belum ada data timeline yang tersedia.</p>
+            <p className="text-lg">No timeline entries yet.</p>
           </div>
         )}
 

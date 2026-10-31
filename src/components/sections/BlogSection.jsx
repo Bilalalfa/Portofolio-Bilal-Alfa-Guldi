@@ -33,13 +33,13 @@ function BlogSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section heading */}
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Blog</h2>
-        <p className="text-gray-500 dark:text-slate-400 mb-10">Artikel dan tulisan terbaru</p>
+        <p className="text-gray-500 dark:text-slate-400 mb-10">Latest articles and writing</p>
 
         {/* Loading state */}
         {loading && (
-          <div className="flex items-center justify-center py-20" aria-live="polite" aria-label="Memuat artikel">
+          <div className="flex items-center justify-center py-20" aria-live="polite" aria-label="Loading articles">
             <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" role="status">
-              <span className="sr-only">Memuat...</span>
+              <span className="sr-only">Loading...</span>
             </div>
           </div>
         )}
@@ -47,7 +47,7 @@ function BlogSection() {
         {/* Error / Empty state */}
         {!loading && (!posts || posts.length === 0) && (
           <div className="text-center py-20 text-gray-400">
-            <p className="text-lg">Belum ada artikel yang tersedia.</p>
+            <p className="text-lg">No articles yet.</p>
           </div>
         )}
 

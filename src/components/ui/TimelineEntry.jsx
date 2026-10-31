@@ -12,7 +12,8 @@ function formatMonthYear(dateStr) {
   const match = dateStr.match(/^(\d{4})-(\d{2})$/);
   if (!match) return dateStr;
   const [, year, month] = match;
-  return `${month}/${year}`;
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${MONTHS[Number(month) - 1] ?? month} ${year}`;
 }
 
 /**
